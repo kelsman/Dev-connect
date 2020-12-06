@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('config');
-require('dotenv').config()
+require('dotenv').config();
 // const router = require('./routes/api/users');
 
 
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 4000;
 //mongodb connection
 const db = config.get('MongoUrl')
 mongoose.connect(db, {
@@ -37,5 +37,4 @@ mongoose.connect(db, {
 //define routes
 app.use('/api/user', require('./routes/api/users'));
 app.use('/api/profile', require('./routes/api/profile'));
-
 
