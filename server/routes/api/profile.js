@@ -317,21 +317,21 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
 // @route    GET api/profile/github/:username
 // @desc   Get user repos from github
 // @access   Public
-router.get('/github/:username', (req, res) => {
-    try {
-        const options = {
-            uri: `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc&client_id=${config.get(githubClientId)}&client_secret=${config.get(githubClientSecret)}`
-        };
-        const headers = {
-            'user-agent': 'node.js',
-            Authorzation: { 'user-agent': 'node.js' }
-        }
-        const gitHubResponse = await axios.get(options, { headers });
-        return res.json(gitHubResponse.data);
-    } catch (error) {
-        console.error(errro.message);
-    }
-})
+// router.get('/github/:username', (req, res) => {
+//     try {
+//         const options = {
+//             uri: `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc&client_id=${config.get(githubClientId)}&client_secret=${config.get(githubClientSecret)}`
+//         };
+//         const headers = {
+//             'user-agent': 'node.js',
+//             Authorzation: { 'user-agent': 'node.js' }
+//         }
+//         const gitHubResponse = await axios.get(options, { headers });
+//         return res.json(gitHubResponse.data);
+//     } catch (error) {
+//         console.error(errro.message);
+//     }
+// })
 
 
 module.exports = router;

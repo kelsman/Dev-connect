@@ -152,4 +152,10 @@ router.delete('/', auth, async (req, res) => {
         res.json({ msg: error.message })
     }
 });
+// //@access public 
+// //@desc get all users
+// router.get('/all-users', async (req, res) => {
+//     const users = await User.find({})
+//     res.json(users);
+// })
 module.exports = router;

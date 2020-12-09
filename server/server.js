@@ -37,4 +37,5 @@ mongoose.connect(db, {
 //define routes
 app.use('/api/user', require('./routes/api/users'));
 app.use('/api/profile', require('./routes/api/profile'));
+app.use('/api/posts', require('./routes/api/post'));
 
