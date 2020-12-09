@@ -128,7 +128,7 @@ router.post('/login',
 router.get('/', auth, async (req, res) => {
 
     try {
-        const user = await User.findById(req.user.id).select('-password')
+        const user = await User.findById(req.user).select('-password')
         if (user) {
             return res.json(user);
         }
@@ -152,10 +152,10 @@ router.delete('/', auth, async (req, res) => {
         res.json({ msg: error.message })
     }
 });
-// //@access public 
-// //@desc get all users
-// router.get('/all-users', async (req, res) => {
-//     const users = await User.find({})
-//     res.json(users);
-// })
+//@access public 
+//@desc get all users
+router.get('/all-users', async (req, res) => {
+    const users = await User.find({})
+    res.json(users);
+})
 module.exports = router;
